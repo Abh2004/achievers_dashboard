@@ -1,15 +1,10 @@
-from .views import index
-from django.urls import path,include
+# urls.py
+
 from django.urls import path
-from .views import upload_image
-urlpatterns = [
-    path('', index, name='index'),
-    path('upload/', upload_image, name='upload_image'),
-
-]
-
-
+from . import views
 
 urlpatterns = [
-    # Add other URL patterns as needed
+    path('', views.upload_image, name='upload_image'),  # Assuming this is your homepage
+    path('submit/', views.submit_data, name='submit_data'),
+
 ]
